@@ -18,7 +18,7 @@ gem "hotwire-rails"
 
 # Caching
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.0'
+gem "redis", "~> 4.0"
 
 # Auth
 # Use Active Model has_secure_password
