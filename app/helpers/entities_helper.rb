@@ -3,7 +3,8 @@
 module EntitiesHelper
   def entity_formatted(entity)
     tag.span class: entity.etype.downcase.to_s do
-      "#{entity.body} <span class='etype'>#{entity.etype}</span>"
+      concat tag.span entity.body
+      concat tag.span entity.etype, class: "etype"
     end
   end
 end
