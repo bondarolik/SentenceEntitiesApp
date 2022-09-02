@@ -3,5 +3,7 @@
   <td><%= resource.content %></td>
   <td><%= resource.pattern %></td>
   <td><%= resource.entities.size %></td>
-  <td>actions</td>
+  <td>
+    <%= link_to "Edit", edit_sentence_path(resource), class: "btn btn-sm btn-warning" %>
+  </td>
 </tr>
