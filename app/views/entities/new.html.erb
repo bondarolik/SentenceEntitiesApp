@@ -7,6 +7,11 @@
 <div class="row mt-3">
   <div class="col-12 col-md-8 mx-auto">
     <%= simple_form_for [@sentence, @resource] do |f| %>
+      <% if @resource.errors.any? %>
+        <div class="error-message">
+          <%= @resource.errors.full_messages.to_sentence.capitalize %>
+        </div>
+      <% end %>
       <div class="row">
         <div class="col-12 col-md-3 mb-3">
           <% if @sentence.entities.present? %>

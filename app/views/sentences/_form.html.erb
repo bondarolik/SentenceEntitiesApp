@@ -1,4 +1,9 @@
 <%= simple_form_for @resource do |f| %>
+  <% if @resource.errors.any? %>
+    <div class="error-message">
+      <%= @resource.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
   <%= f.input :content, as: :text, wrapper_html: { class: "mb-3" } %>
   <div class="mb-3">
     <% if @resource.entities.any? %>
