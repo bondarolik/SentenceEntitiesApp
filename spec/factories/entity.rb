@@ -2,7 +2,6 @@
 
 FactoryBot.define do
   factory :entity do
-    body { "Adidas" }
-    etype { "gpe" }
+    sentence
   end
 end
