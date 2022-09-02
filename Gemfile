@@ -29,6 +29,7 @@ gem "redis", "~> 4.0"
 
 # Other
 gem "simple_form"
+gem "net-smtp", require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
@@ -37,6 +38,10 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "dotenv-rails"
   gem "pry-byebug"
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
+  # gem "premailer-rails"
 end
 
 group :development do
@@ -56,6 +61,18 @@ group :development do
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
   gem "rubocop-shopify", require: false
+end
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "rspec-retry"
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "capybara-selenium"
+  # gem "capybara-screenshot"
+  gem "shoulda-matchers", github: "thoughtbot/shoulda-matchers", ref: "e965a27c"
+  gem "webmock"
+  gem "timecop"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
