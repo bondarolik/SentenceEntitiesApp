@@ -6,7 +6,7 @@
   <% end %>
   <%= f.input :content, as: :text, wrapper_html: { class: "mb-3" } %>
   <div class="mb-3">
-    <% if @resource.entities.any? %>
+    <% if @resource.with_entities? %>
       <h5>Entities available:</h5>
       <ul>
         <% @resource.entities.each do |entity| %>

@@ -1,7 +1,7 @@
 <tr id="<%= dom_id(resource) %>">
   <th scope="row"><%= resource.id %></th>
   <td>
-    <%= resource.entified? ? formatted_pattern(resource).html_safe : resource.content %>
+    <%= resource.with_entities? ? formatted_pattern(resource).html_safe : resource.content %>
   </td>
   <td><%= resource.entities.size %></td>
   <td class="text-end">
