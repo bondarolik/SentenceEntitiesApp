@@ -3,7 +3,7 @@
   <td><%= resource.content %></td>
   <td><%= resource.entities.size %></td>
   <td class="text-end">
-    <%= link_to "Manage entities", new_sentence_entity_path(resource), class: "btn btn-sm btn-outline-primary" %>
+    <%= link_to "Manage entities", new_sentence_entity_path([resource]), class: "btn btn-sm btn-outline-primary" %>
     <%= link_to "Edit", edit_sentence_path(resource), class: "btn btn-sm btn-outline-warning" %>
   </td>
 </tr>
