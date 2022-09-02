@@ -1,12 +1,27 @@
 <div class="row mt-3 mb-3">
-  <div class="col-8 mx-auto text-center">
+  <div class="col-8 mx-auto text-end">
     <%= link_to "New sentence", new_sentence_path, class: "btn btn-sm btn-primary" %>
   </div>
 </div>
 <div class="row">
-  <% @resources.each do |resource| %>
-    <div class="col-8 mx-auto">
-      <%= resource.content %>
-    </div>
-  <% end %>
+  <div class="col-8 mx-auto">
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Content</th>
+          <th scope="col">Pattern</th>
+          <th scope="col">Entities</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @resources.each do |resource| %>
+          <% cache resource do %>
+            <%= render "resource", resource: resource  %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

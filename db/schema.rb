@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_02_130015) do
+ActiveRecord::Schema.define(version: 2022_09_02_132748) do
 
   create_table "entities", force: :cascade do |t|
     t.string "body", null: false
     t.integer "etype", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "sentence_id"
+    t.index ["sentence_id"], name: "index_entities_on_sentence_id"
   end
 
   create_table "sentences", force: :cascade do |t|
