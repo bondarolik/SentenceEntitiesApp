@@ -3,5 +3,5 @@
 class Entity < ApplicationRecord
   belongs_to :sentence
 
-  enum :type, [:org, :gpe, :money, :theme, :time]
+  enum etype: { org: 0, gpe: 1, money: 2, theme: 3, time: 4 }
 end
