@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   resources :sentences do
-    resources :entities
+    resources :entities, only: [:new, :edit, :create, :update, :destroy]
   end
 
   root "sentences#index"

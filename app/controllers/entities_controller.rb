@@ -1,15 +1,31 @@
 # frozen_string_literal: true
 
 class EntitiesController < ApplicationController
-  include DryController
   before_action :set_sentence
+  before_action :set_resource, only: [:edit, :update, :destroy]
 
   def new
-    super
     @resource = @sentence.entities.new
   end
 
+  def create
+    @resource = @sentence.entities.new(resource_params)
+    @resource.body = params[:entity][:body].reject(&:empty?).join(" ")
+
+    if @resource.save
+      redirect_to new_sentence_entity_path([@sentence]), notice: "Entity created"
+    end
+  end
+
+  def edit; end
+  def update; end
+  def destroy; end
+
   private
+
+  def set_resource
+    @resource = Entity.find(params[:id])
+  end
 
   def set_sentence
     @sentence = Sentence.find(params[:sentence_id])
@@ -17,6 +33,6 @@ class EntitiesController < ApplicationController
 
   def resource_params
     accessible = [:body, :etype, :sentence_id]
-    params.require(:sentence).permit(accessible)
+    params.require(:entity).permit(accessible)
   end
 end
