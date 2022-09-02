@@ -13,7 +13,7 @@ class EntitiesController < ApplicationController
     @resource.body = params[:entity][:body].reject(&:empty?).join(" ")
 
     if @resource.save
-      redirect_to new_sentence_entity_path([@sentence]), notice: "Entity created"
+      redirect_to new_sentence_entity_path([@sentence]), notice: I18n.t("views.common.created.success")
     end
   end
 

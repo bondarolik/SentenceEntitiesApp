@@ -5,7 +5,7 @@
       <h5>Entities available:</h5>
       <ul>
         <% @resource.entities.each do |entity| %>
-          <li class="mb-2"><%= entity_formatted(entity) %></li>
+          <li class="mb-2"><%= entity_formatted(entity).html_safe %></li>
         <% end %>
       </ul>
     <% end %>
