@@ -1,16 +1,15 @@
 <%= simple_form_for @resource do |f| %>
-  <%= f.input :content, input_html: { disabled: true }, wrapper_html: { class: "mb-3" } %>
+  <%= f.input :content, as: :text, wrapper_html: { class: "mb-3" } %>
   <div class="mb-3">
     <% if @resource.entities.any? %>
       <h5>Entities available:</h5>
       <ul>
         <% @resource.entities.each do |entity| %>
-          <li><%= entity_formatted(entity) %></li>
+          <li class="mb-2"><%= entity_formatted(entity) %></li>
         <% end %>
       </ul>
     <% end %>
   </div>
-  <%= f.input :pattern %>
   <div id="actions" class="row mt-3">
     <div class="col-12 text-center">
       <%= link_to "Back", :back, class: "btn btn-sm btn-outline-dark" %>

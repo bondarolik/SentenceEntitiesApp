@@ -2,7 +2,7 @@
 
 module EntitiesHelper
   def entity_formatted(entity)
-    tag.div class: entity.etype.downcase.to_s do
+    tag.span class: entity.etype.downcase.to_s do
       "#{entity.body} <span class='etype'>#{entity.etype}</span>".html_safe
     end
   end
