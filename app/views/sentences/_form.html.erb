@@ -1,0 +1,7 @@
+<%= simple_form_for @resource do |f| %>
+  <%= f.input :content %>
+  <%= f.input :pattern %>
+  <div class="mt-3">
+    <%= f.submit "Save", class: "btn btn-sm btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<div class="row mt-3 mb-3">
+  <div class="col-8 mx-auto text-center">
+    <%= link_to "New sentence", new_sentence_path, class: "btn btn-sm btn-primary" %>
+  </div>
+</div>
+<div class="row">
+  <% @resources.each do |resource| %>
+    <div class="col-8 mx-auto">
+      <%= resource.content %>
+    </div>
+  <% end %>
+</div>
