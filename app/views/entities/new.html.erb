@@ -28,14 +28,15 @@
         <div class="col-12 col-md-4 mb-3">
           <%= f.input :body, label: "Select word(s):",
                               as: :check_boxes,
-                              collection: @sentence.words, 
+                              collection: @sentence.words(except: true), 
                               item_wrapper_class: "inline" %>
         </div>
         <div class="col-12 col-md-5 mb-3">
           <%= f.input :etype, as: :select,
                               label: "Define TYPE:", 
                               collection: Entity.etypes.map { |v,k| [v.upcase, v]},
-                              input_html: { promt: true } %>
+                              prompt: "Select type for new Entity",
+                              selected: "" %>
         </div>
       </div>
       <div class="row">

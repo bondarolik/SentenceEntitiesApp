@@ -5,8 +5,16 @@ class Sentence < ApplicationRecord
 
   validates :content, presence: true
 
-  def words
-    content.split(%r{[\s/,/-]}).reject(&:empty?)
+  def words(except: false)
+    result = content
+
+    if except && entified?
+      entities.pluck(:body).compact.each do |body|
+        result.slice! body
+      end
+    end
+
+    result.split(%r{[\s/,/-]}).reject(&:empty?)
   end
 
   def entified?
