@@ -23,11 +23,16 @@ module DryController
 
   def create
     @resource = resource_class.new(resource_params)
+
     if @resource.save
-      flash[:notice] = I18n.t("views.common.created.success", name: resource_class.model_name.human)
-      redirect_to("/" + controller_path)
+      respond_to do |format|
+        format.html do
+          redirect_to "/" + controller_path,
+            notice: I18n.t("views.common.created.success", name: resource_class.model_name.human)
+        end
+        format.turbo_stream
+      end
     else
-      flash[:error] = I18n.t("views.common.created.error", name: resource_class.model_name.human)
       render :new, status: :unprocessable_entity
     end
   end

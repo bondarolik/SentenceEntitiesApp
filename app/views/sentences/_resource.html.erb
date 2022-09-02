@@ -1,4 +1,4 @@
-<tr>
+<tr id="<%= dom_id(resource) %>">
   <th scope="row"><%= resource.id %></th>
   <td>
     <%= resource.entified? ? formatted_pattern(resource).html_safe : resource.content %>

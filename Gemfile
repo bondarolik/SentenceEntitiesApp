@@ -14,10 +14,11 @@ gem "jbuilder", "~> 2.7"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
+gem "hotwire-rails"
 
 # Caching
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 
 # Auth
 # Use Active Model has_secure_password
