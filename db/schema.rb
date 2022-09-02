@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2022_09_02_170222) do
 
   create_table "entities", force: :cascade do |t|
     t.string "body", null: false
-    t.integer "etype", default: 0
+    t.integer "etype"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "sentence_id"
