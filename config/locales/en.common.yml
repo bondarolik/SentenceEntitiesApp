@@ -1,0 +1,39 @@
+en:
+  views:
+    common:
+      actions: Actions
+      add: add
+      update: Update
+      confirm_deletion: "Do you confirm this action?"
+      delete: Delete
+      save: Save
+      edit: Edit
+      show: Show
+      back: Back
+      search: Search
+      register: Register
+      subscribed: Suscribed
+      pause: Deactivate
+      unpause: Actavate
+      close: Close
+      next: Next
+      previous: Prevous
+      cancel: Cancel
+      confirm: Confirm
+      back_to_list: Back to list
+      created:
+        success: Created successfully
+        error: Error creating element
+      destroyed:
+        success: Destroyed successfully
+        error: Error destroying element
+      deactivated:
+        success: Deactivated successfully
+        error: Error on deactivation
+      load: Load
+      non_existent_page: Page not exists
+      page_not_found: Page not found
+      no_data_available: No data available
+      n_a: "N/A"
+      watch: Watch
+      saving_error_message: " error saving this dataset"
