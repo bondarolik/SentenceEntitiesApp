@@ -1,23 +1,23 @@
 <div class="row mt-3 mb-3">
-  <div class="col-8 mx-auto text-end">
-    <%= link_to "New sentence", new_sentence_path, class: "btn btn-sm btn-primary" %>
+  <div class="col-12 col-md-10 mx-auto text-end">
+    <%= link_to "New sentence", new_sentence_path, class: "btn btn-sm btn-primary", data: { turbo_frame: dom_id(Sentence.new) } %>
   </div>
+  <%= turbo_frame_tag Sentence.new %>
 </div>
 <div class="row">
-  <div class="col-8 mx-auto">
+  <div class="col col-md-10 mx-auto">
     <table class="table table-striped table-hover table-bordered">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Content</th>
-          <th scope="col">Pattern</th>
+          <th scope="col">Sentence</th>
           <th scope="col">Entities</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <% @resources.each do |resource| %>
-          <% cache resource do %>
+        <%= turbo_frame_tag "sentences_list" do %>
+          <% @resources.each do |resource| %>
             <%= render "resource", resource: resource  %>
           <% end %>
         <% end %>

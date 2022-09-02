@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_02_132748) do
+ActiveRecord::Schema.define(version: 2022_09_02_170222) do
 
   create_table "entities", force: :cascade do |t|
     t.string "body", null: false
-    t.integer "etype", default: 0
+    t.integer "etype"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "sentence_id"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2022_09_02_132748) do
 
   create_table "sentences", force: :cascade do |t|
     t.text "content", null: false
-    t.text "pattern"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

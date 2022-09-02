@@ -1,7 +1,11 @@
-<tr>
+<tr id="<%= dom_id(resource) %>">
   <th scope="row"><%= resource.id %></th>
-  <td><%= resource.content %></td>
-  <td><%= resource.pattern %></td>
+  <td>
+    <%= resource.with_entities? ? formatted_pattern(resource).html_safe : resource.content %>
+  </td>
   <td><%= resource.entities.size %></td>
-  <td>actions</td>
+  <td class="text-end">
+    <%= link_to "Manage entities", new_sentence_entity_path([resource]), class: "btn btn-sm btn-outline-primary" %>
+    <%= link_to "Edit", edit_sentence_path(resource), class: "btn btn-sm btn-outline-warning" %>
+  </td>
 </tr>

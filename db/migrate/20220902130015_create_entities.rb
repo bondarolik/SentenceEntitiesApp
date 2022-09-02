@@ -4,7 +4,7 @@ class CreateEntities < ActiveRecord::Migration[6.1]
   def change
     create_table :entities do |t|
       t.string :body, null: false
-      t.integer :etype, default: 0
+      t.integer :etype
 
       t.timestamps
     end

@@ -1,9 +1,23 @@
 <%= simple_form_for @resource do |f| %>
-  <%= f.input :content %>
-  <%= f.input :pattern %>
+  <% if @resource.errors.any? %>
+    <div class="error-message">
+      <%= @resource.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+  <%= f.input :content, as: :text, wrapper_html: { class: "mb-3" } %>
+  <div class="mb-3">
+    <% if @resource.with_entities? %>
+      <h5>Entities available:</h5>
+      <ul>
+        <% @resource.entities.each do |entity| %>
+          <li class="mb-2"><%= entity_formatted(entity).html_safe %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
   <div id="actions" class="row mt-3">
-    <div class="col-12 text-center">
-      <%= link_to "Back", :back, class: "btn btn-sm btn-outline-dark" %>
+    <div class="col text-end">
+      <%= link_to sanitize("&larr; Back to list"), sentences_path, class: "btn btn-sm btn-outline-dark" %>
       <%= f.submit "Save", class: "btn btn-sm btn-primary" %>
     </div>
   </div>

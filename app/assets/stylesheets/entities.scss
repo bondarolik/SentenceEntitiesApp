@@ -1,0 +1,39 @@
+// Place all the styles related to the entities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.org,
+.gpe,
+.money,
+.time,
+.theme {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+span.etype {
+  margin-left: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.org {
+  background-color: #4BEFEC;
+}
+
+.gpe {
+  background-color: #FFC66C;
+}
+
+.money {
+  background-color: #E3E7D1;
+}
+
+.time {
+  background-color: #E3E7D1;
+}
+
+.theme {
+  background-color: #FF5733;
+}

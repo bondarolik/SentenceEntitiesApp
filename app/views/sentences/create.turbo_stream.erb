@@ -1,0 +1,2 @@
+<%= turbo_stream.append "sentences_list", partial: "sentences/resource", locals: { resource: @resource } %>
+<%= turbo_stream.update Sentence.new, "" %>
