@@ -3,11 +3,11 @@
 require "rails_helper"
 
 RSpec.describe Sentence, type: :model do
-  describe "validations" do
+  describe "Validations" do
     it { is_expected.to validate_presence_of(:content) }
   end
 
-  context "when using associations" do
+  describe "Associations" do
     it { is_expected.to have_many(:entities).dependent(:destroy) }
   end
 end
