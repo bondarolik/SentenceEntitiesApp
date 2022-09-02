@@ -17,7 +17,7 @@
   </div>
   <div id="actions" class="row mt-3">
     <div class="col-12 text-center">
-      <%= link_to "Back", :back, class: "btn btn-sm btn-outline-dark" %>
+      <%= link_to sanitize("&larr; Back to list"), sentences_path, class: "btn btn-sm btn-outline-dark" %>
       <%= f.submit "Save", class: "btn btn-sm btn-primary" %>
     </div>
   </div>

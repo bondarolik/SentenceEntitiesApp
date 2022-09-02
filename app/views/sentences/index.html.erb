@@ -1,6 +1,8 @@
 <div class="row mt-3 mb-3">
   <div class="col-10 mx-auto text-end">
-    <%= link_to "New sentence", new_sentence_path, class: "btn btn-sm btn-primary" %>
+    <%= turbo_frame_tag "new_sentence" do %>
+      <%= link_to "New sentence", new_sentence_path, class: "btn btn-sm btn-primary" %>
+    <% end %>
   </div>
 </div>
 <div class="row">

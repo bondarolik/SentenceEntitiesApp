@@ -28,7 +28,7 @@ module DryController
       redirect_to("/" + controller_path)
     else
       flash[:error] = I18n.t("views.common.created.error", name: resource_class.model_name.human)
-      render(:new)
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -38,7 +38,7 @@ module DryController
       redirect_to(redirect_after_update)
     else
       flash[:error] = I18n.t("views.common.updated.error", name: resource_class.model_name.human)
-      render(:edit)
+      render :edit, status: :unprocessable_entity
     end
   end
 
